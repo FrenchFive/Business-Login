@@ -28,7 +28,9 @@ $target = $db->driver === 'mysql'
     ? "MySQL {$config->dbUsername}@{$config->dbHost}:{$config->dbPort}/{$config->dbDatabase}"
     : 'SQLite ' . $config->path($config->databasePath);
 
-if (in_array('--fresh', $argv, true)) {
+$options = getopt('', ['fresh']);
+
+if (is_array($options) && array_key_exists('fresh', $options)) {
     $db->dropAllTables();
     $leftovers = array_merge(
         glob($config->path($config->sessionPath) . '/sess_*') ?: [],
