@@ -1,0 +1,10 @@
+.git
+.github
+vendor
+docs
+tests
+.env
+.phpunit.cache
+storage/*.sqlite*
+storage/sessions/sess_*
+storage/mail/*.eml

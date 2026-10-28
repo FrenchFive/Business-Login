@@ -1,6 +1,24 @@
-composer.phar
+# Dependencies (dev tools only — the app itself needs none)
 /vendor/
+composer.phar
 
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+# Local configuration
+/.env
+
+# Runtime data (kept as empty directories via .gitkeep)
+/storage/*.sqlite
+/storage/*.sqlite-*
+/storage/sessions/*
+/storage/mail/*
+!/storage/**/.gitkeep
+
+# Tooling caches
+/.phpunit.cache/
+/.phpunit.result.cache
+/node_modules/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
